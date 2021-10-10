@@ -1,0 +1,92 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+}
+
+.price {
+    color: grey;
+    font-size: 22px;
+}
+
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.card button:hover {
+    opacity: 0.7;
+}
+
+.product-quantity {
+    display: flex;
+    margin: 5px 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pqt {
+    font-size: 20px;
+    line-height: 30px;
+    width: 30px;
+    text-align: center;
+}
+
+.pqt-plus,
+.pqt-minus {
+    background: #fcfcfc;
+    border: none;
+    font-size: 20px;
+    height: 100%;
+    padding: 0 15px;
+}
+.pqt-plus:hover,
+.pqt-minus:hover {
+    background: #53b5aa;
+    color: #fff;
+    cursor: pointer;
+}
+.pqt-plus {
+    line-height: 30px;
+}
+
+.pqt-minus {
+    line-height: 30px;
+}
+
+hr{
+    width: 40%;
+    float: right;
+    margin-right: 0;
+}
+
+.button {
+    color: #fff !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #60a3bc;
+    padding: 20px;
+    border-radius: 50px;
+    display: inline-block;
+    border: none;
+    transition: all 0.4s ease 0s;
+    position: absolute;
+    bottom: 5%;
+    right: 20%;
+}
+
+.button:hover {
+    text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.4s ease 0s;
+}
