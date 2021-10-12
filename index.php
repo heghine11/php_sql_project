@@ -1,6 +1,8 @@
 <?php
 require_once 'php_classes/try_smth.php';
 new try_smth();
+//https://www.youtube.com/watch?v=gQLiFtjU1WQ&list=PLk4WFMCLz7Cy-deb3GefNca_SrDWXz7gj&index=2
+//https://www.youtube.com/watch?v=Rkg731t47dc&list=PL0Zuz27SZ-6MeRUt-z60DRxNqcrFAUYIb&index=12
 //require("php_classes/Db.php");
 //$db = new Db();
 //var_dump($_GET);
