@@ -1,6 +1,16 @@
 <?php
 require_once 'php_classes/try_smth.php';
-new try_smth();
+//require_once 'controllers/Controller.php';
+//new try_smth();
+//echo "hi";
+$app = new try_smth();
+
+$app->router->get('/', function() {
+   return 'hey';
+});
+
+$app->run();
+//https://www.youtube.com/watch?v=GTESlsYTUns -last
 //https://www.youtube.com/watch?v=gQLiFtjU1WQ&list=PLk4WFMCLz7Cy-deb3GefNca_SrDWXz7gj&index=2
 //https://www.youtube.com/watch?v=Rkg731t47dc&list=PL0Zuz27SZ-6MeRUt-z60DRxNqcrFAUYIb&index=12
 //require("php_classes/Db.php");
@@ -21,6 +31,6 @@ new try_smth();
 //
 //header("HTTP/1.0 404 Not Found");
 //exit;
-
+?>
 
 
