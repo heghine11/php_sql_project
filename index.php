@@ -1,15 +1,41 @@
 <?php
-require_once 'php_classes/try_smth.php';
+require_once 'app/init.php';
+//require_once 'php_classes/app.php';
 //require_once 'controllers/Controller.php';
-//new try_smth();
 //echo "hi";
-$app = new try_smth();
+$app = new App;
 
-$app->router->get('/', function() {
-   return 'hey';
-});
+// /etc/nginx/sites-available/sql_php.com file
+//server {
+//    set $fcgi_server unix:/run/php/php7.4-fpm.sock;
+//
+//	listen 80 default_server;
+//	listen [::]:80 default_server;
+//	root /var/www/sql_php.com/php_sql_project/;
+//	index index.php;
+//	server_name sql_php.loc;
+//
+//	location / {
+//        try_files $uri $uri/ =404;
+//		if (!-e $request_filename){
+//            rewrite ^(.+)$ /index.php?url=$1 break;
+//  		}
+//	}
+//	location ~ \.php$ {
+//    include snippets/fastcgi-php.conf;
+//		fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
+//	}
+//}
 
-$app->run();
+
+
+
+
+//$app->router->get('/', function() {
+//   return 'hey';
+//});
+//
+//$app->run();
 //https://www.youtube.com/watch?v=GTESlsYTUns -last
 //https://www.youtube.com/watch?v=gQLiFtjU1WQ&list=PLk4WFMCLz7Cy-deb3GefNca_SrDWXz7gj&index=2
 //https://www.youtube.com/watch?v=Rkg731t47dc&list=PL0Zuz27SZ-6MeRUt-z60DRxNqcrFAUYIb&index=12
