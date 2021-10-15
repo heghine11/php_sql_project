@@ -3,7 +3,9 @@ require_once 'app/init.php';
 //require_once 'php_classes/app.php';
 //require_once 'controllers/Controller.php';
 //echo "hi";
-$app = new App;
+$app = new App();
+
+
 
 // /etc/nginx/sites-available/sql_php.com file
 //server {
