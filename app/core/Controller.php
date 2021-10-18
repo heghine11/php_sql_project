@@ -1,15 +1,18 @@
 <?php
-class Controller
-{
-    public function model($model)
-    {
-//        echo $model;
-        require_once '../models/User.php';
-        return new $model();
-    }
 
-    public function view($view, $data= [])
+namespace app\core;
+
+use app\core\View;
+
+abstract class Controller
+{
+    public $route;
+    public $view;
+
+    public function __construct($route)
     {
-        require_once '../views/'. $view .'.php';
+        $this->route = $route;
+        $this->view = new View($route);
+
     }
 }

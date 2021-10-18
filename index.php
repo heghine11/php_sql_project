@@ -1,9 +1,28 @@
 <?php
-require_once 'app/init.php';
-//require_once 'php_classes/app.php';
-//require_once 'controllers/Controller.php';
-//echo "hi";
-$app = new App();
+
+    use app\core\Router;
+
+    spl_autoload_register(function ($className) {
+        $path = str_replace('\\', '/', $className . '.php');
+        if (file_exists($path)) {
+            require $path;
+        }
+    });
+
+    $router = new Router();
+    $router->run();
+
+//function myAutoLoader($className) {
+//    $path = "app/controllers/";
+//    $extension = ".php";
+//    $fullPath = $path . $className . $extension;
+//
+//    if (!file_exists($fullPath)) {
+//        return false;
+//    }
+//
+//    require_once $fullPath;
+//}
 
 
 
@@ -59,6 +78,6 @@ $app = new App();
 //
 //header("HTTP/1.0 404 Not Found");
 //exit;
-?>
+
 
 
