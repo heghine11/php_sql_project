@@ -7,6 +7,8 @@ class Account extends Controller
 {
     public function loginAction()
     {
-        echo "login exav";
+        $this->view->redirect('/');
+        $this->view->layout = 'custom';
+        $this->view->render('login page');
     }
 }

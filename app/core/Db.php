@@ -1,59 +1,29 @@
 <?php
-namespace libs;
+
+namespace app\core;
 
 use PDO;
 
-class Db extends DefaultLib
+class Db
 {
 
-    protected static $instance;
+//    protected static $instance;
+//
+//    protected $dsn = 'mysql:host=localhost;dbname=shoppingSystem';
+//    protected $username = 'heghine';
+//    protected $password = 'Heghine111+';
+//
+//    protected $pdo;
 
-    protected $dsn = 'mysql:host=localhost;dbname=shoppingSystem';
-    protected $username = 'heghine';
-    protected $password = 'Heghine111+';
-
-    protected $pdo;
+    protected $db;
 
     public function __construct()
     {
-        $this->pdo = new PDO($this->dsn, $this->username, $this->password);
-        $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    }
-
-    public function queryOne($query, $binds = [])
-    {
-        $query = $this->query($query, $binds);
-        return $query->fetch();
-    }
-
-    public function query($sql, $data = null)
-    {
-        if ($data !== null) {
-            $dat = array_values($data);
-        }
-        $sel = $this->pdo->prepare($sql);
-        if ($data !== null) {
-            $sel->execute($dat);
-        } else {
-            $sel->execute();
-        }
-        $sel->setFetchMode(PDO::FETCH_OBJ);
-        return $sel;
-//        $query = $this->pdo->prepare($sql);
-//        $query->execute($binds);
-//        $query->setFetchMode(PDO::FETCH_OBJ);
-//        return $query;
-    }
-
-    public function queryAll($query, $binds = [])
-    {
-        $query = $this->query($query, $binds);
-        return $query->fetchAll();
-    }
-
-    public function lastInsertedId()
-    {
-        return $this->pdo->lastInsertId();
+        $config = require 'app/configs/db.php';
+        $this->db = new PDO('mysql:host='.$config['host'].';dbname='.$config['dbname'].'',
+            $config['username'], $config['password']);
+//        $this->pdo = new PDO($this->dsn, $this->username, $this->password);
+//        $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
 }

@@ -3,7 +3,7 @@
 <head>
     <title><?php echo $title; ?></title>
 </head>
-<body>
-    <?php echo $content; ?>
+<body style="background: #53b5aa">
+<?php echo $content; ?>
 </body>
 </html>

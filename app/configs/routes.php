@@ -5,9 +5,13 @@ return [
         'controller' => 'main',
         'action' => 'index',
     ],
-    'contact' => [
+    'home' => [
         'controller' => 'main',
-        'action' => 'contact',
+        'action' => 'home',
+    ],
+    'account' => [
+        'controller' => 'main',
+        'action' => 'account',
     ],
     'account/login' => [
         'controller' => 'account',

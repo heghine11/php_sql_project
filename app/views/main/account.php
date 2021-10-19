@@ -1,6 +1,6 @@
-<?php include 'nav.php'; ?>
+<?php include '../layouts/nav.php'; ?>
 <style>
-    <?php include 'account.css'; ?>
+    <?php include '../account.css'; ?>
 </style>
 
 <form action="account.php" style="border:1px solid #ccc">

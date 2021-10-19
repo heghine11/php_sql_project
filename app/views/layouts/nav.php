@@ -1,5 +1,5 @@
 <style>
-    <?php include 'nav.css'; ?>
+    <?php include '../nav.css'; ?>
 </style>
 
 <div class="topnav">
