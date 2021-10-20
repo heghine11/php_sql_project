@@ -7,7 +7,7 @@ class Account extends Controller
 {
     public function loginAction()
     {
-        $this->view->redirect('/');
+//        $this->view->redirect('/');
         $this->view->layout = 'custom';
         $this->view->render('login page');
     }

@@ -6,15 +6,6 @@ use PDO;
 
 class Db
 {
-
-//    protected static $instance;
-//
-//    protected $dsn = 'mysql:host=localhost;dbname=shoppingSystem';
-//    protected $username = 'heghine';
-//    protected $password = 'Heghine111+';
-//
-//    protected $pdo;
-
     protected $db;
 
     public function __construct()
@@ -24,6 +15,33 @@ class Db
             $config['username'], $config['password']);
 //        $this->pdo = new PDO($this->dsn, $this->username, $this->password);
 //        $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }
+
+    public function query($sql, $params = [])
+    {
+        $stmt = $this->db->prepare($sql);
+        if (!empty($params)) {
+            foreach ($params as $key=>$value) {
+//                echo '<p>'.$key.'=>'.$value.'</p>';
+                $stmt->bindValue(':' . $key, $value);
+            }
+        }
+//        exit;
+        $stmt->execute();
+//        $query = $this->db->query($sql);
+        return $stmt;
+    }
+
+    public function row($sql, $params = [])
+    {
+        $result = $this->query($sql, $params);
+        return $result->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function column($sql, $params = [])
+    {
+        $result = $this->query($sql, $params);
+        return $result->fetchColumn();
     }
 
 }

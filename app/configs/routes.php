@@ -9,6 +9,10 @@ return [
         'controller' => 'main',
         'action' => 'home',
     ],
+    'addProducts' => [
+        'controller' => 'main',
+        'action' => 'addProducts',
+    ],
     'account' => [
         'controller' => 'main',
         'action' => 'account',

@@ -1,6 +1,6 @@
 <?php include 'nav.php'; ?>
 <style>
-    <?php include 'add_products.css'; ?>
+    <?php include '../add_products.css'; ?>
 </style>
 
 <h2>Add products</h2>
