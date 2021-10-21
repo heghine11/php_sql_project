@@ -1,19 +1,19 @@
-<?php include 'nav.php'; ?>
+<?php include '../layouts/nav.php'; ?>
 <style>
-    <?php include '../add_products.css'; ?>
+    <?php include 'Css/add_products.css'; ?>
 </style>
 
 <h2>Add products</h2>
 <p>Add products to your product list.</p>
 
 <div class="container">
-    <form action="add_products.php">
+    <form action="/addProducts" method="post">
         <div class="row">
             <div class="col-25">
                 <label for="pname">Product Name</label>
             </div>
             <div class="col-75">
-                <input type="text" id="pname" name="product_name" placeholder="Product name..">
+                <input type="text" id="pname" name="name" placeholder="Product name..">
             </div>
         </div>
 

@@ -1,6 +1,6 @@
-<?php include '../nav.php'; ?>
+<?php include '../layouts/nav.php'; ?>
 <style>
-    <?php include '../home.css'; ?>
+    <?php include 'Css/home.css'; ?>
 </style>
 
 <div class="card">

@@ -13,8 +13,6 @@ class Db
         $config = require 'app/configs/db.php';
         $this->db = new PDO('mysql:host='.$config['host'].';dbname='.$config['dbname'].'',
             $config['username'], $config['password']);
-//        $this->pdo = new PDO($this->dsn, $this->username, $this->password);
-//        $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
     public function query($sql, $params = [])

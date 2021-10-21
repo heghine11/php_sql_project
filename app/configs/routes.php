@@ -5,24 +5,24 @@ return [
         'controller' => 'main',
         'action' => 'index',
     ],
-    'home' => [
+    'account' => [
         'controller' => 'main',
-        'action' => 'home',
+        'action' => 'account',
     ],
     'addProducts' => [
         'controller' => 'main',
         'action' => 'addProducts',
     ],
-    'account' => [
+    'allOrders' => [
         'controller' => 'main',
-        'action' => 'account',
+        'action' => 'allOrders',
     ],
-    'account/login' => [
-        'controller' => 'account',
-        'action' => 'login',
+    'home' => [
+        'controller' => 'main',
+        'action' => 'home',
     ],
-    'news/show' => [
-        'controller' => 'news',
-        'action' => 'show',
+    'myOrders' => [
+        'controller' => 'main',
+        'action' => 'myOrders',
     ],
 ];

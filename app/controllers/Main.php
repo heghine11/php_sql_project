@@ -7,27 +7,15 @@ use app\core\Db;
 
 class Main extends Controller
 {
+    public function __construct($route)
+    {
+        parent::__construct($route);
+        $this->view->layout = 'default';
+    }
+
     public function indexAction()
     {
-//        $vars = [
-//            'name' => 'Hegh',
-//            'age'=> '20',
-//            'array'=> [1,2,3]
-//        ];
-        $db = new Db();
-        $params = [
-            'id' => 2,
-//            'first_name' => 'mark'
-        ];
-        $data = $db->row('SELECT first_name FROM `users` WHERE id = :id', $params);
-//        var_dump($data);
-        $result = $this->model->getNews();
-//        var_dump($result);
-        $vars = [
-            'first_name' => $result,
-        ];
-        $news = $this->view->render('main page', $vars);
-//        $this->view->render('main page', $vars);
+        $this->view->render('main page');
     }
 
     public function homeAction()
@@ -42,6 +30,15 @@ class Main extends Controller
 
     public function addProductsAction()
     {
-        $this->view->render('add products page');
+        $this->view->render('Add Products page');
+    }
+
+    public function allOrdersAction()
+    {
+        $this->view->render('All Orders page');
+    }
+    public function myOrdersAction()
+    {
+        $this->view->render('My Orders page');
     }
 }
