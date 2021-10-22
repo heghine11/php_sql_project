@@ -19,10 +19,13 @@ class Db
     {
         $stmt = $this->db->prepare($sql);
         if (!empty($params)) {
-            foreach ($params as $key=>$value) {
-//                echo '<p>'.$key.'=>'.$value.'</p>';
-                $stmt->bindValue(':' . $key, $value);
-            }
+            $stmt->bindParam(':name', $params['name'], PDO::PARAM_STR);
+            $stmt->bindParam(':description', $params['description'], PDO::PARAM_STR);
+            $stmt->bindParam(':price', $params['price'], PDO::PARAM_INT);
+//            foreach ($params as $key=>$value) {
+////                echo '<p>'.$key.'=>'.$value.'</p>';
+//                $stmt->bindParam(':' . $key, $_POST['']);
+//            }
         }
 //        exit;
         $stmt->execute();

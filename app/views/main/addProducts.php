@@ -7,7 +7,7 @@
 <p>Add products to your product list.</p>
 
 <div class="container">
-    <form action="/addProducts" method="post">
+    <form action="../../controllers/Main.php" method="post">
         <div class="row">
             <div class="col-25">
                 <label for="pname">Product Name</label>

@@ -5,25 +5,25 @@ use app\core\Model;
 
 class ProductModel extends Model
 {
-    public $db;
+    public $name;
+    public $description;
+    public $price;
 
-    public function __construct($db)
+    public function insertProduct()
     {
-        parent::__construct($db);
+        $table = static::getTableName();
+
+        $sql = "INSERT INTO $table (`name`, `description`, `price`) VALUES (?,?,?)";
+
+        $this->db->query($sql, [$this->name, $this->description, $this->price]);
+        return $this;
+//        $result = $this->db->query('INSERT INTO products(name, description, price)
+//                    VALUES (:name, :price, :description)');
+//        return $result;
     }
-//
-//    public static function getProductsList()
-//    {
-//        $result = $db->query('SELECT id, name, price, description FROM products ORDER BY id ASC');
-//        $productsList = array();
-//        $i = 0;
-//        while ($row = $result->fetch()) {
-//            $productsList[$i]['id'] = $row['id'];
-//            $productsList[$i]['name'] = $row['name'];
-//            $productsList[$i]['description'] = $row['description'];
-//            $productsList[$i]['price'] = $row['price'];
-//            $i++;
-//        }
-//        return $productsList;
-//    }
+
+    public static function getTableName()
+    {
+        return 'products';
+    }
 }
