@@ -9,6 +9,11 @@ use app\core\Router;
         }
     });
 
+    $action = $_GET['action'] ?? '';
+    if(!$action && $_SERVER['REQUEST_URI'] == '/') {
+        $action = 'index';
+    }
+
     $router = new Router();
     $router->run();
 

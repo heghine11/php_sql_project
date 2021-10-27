@@ -9,10 +9,15 @@ return [
         'controller' => 'main',
         'action' => 'account',
     ],
+//    'addProducts' => [
+//        'controller' => 'main',
+//        'action' => 'addProducts',
+//    ],
     'addProducts' => [
-        'controller' => 'main',
+        'controller' => 'product',
         'action' => 'addProducts',
     ],
+
     'allOrders' => [
         'controller' => 'main',
         'action' => 'allOrders',

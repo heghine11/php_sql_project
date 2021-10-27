@@ -18,19 +18,24 @@ class Db
     public function query($sql, $params = [])
     {
         $stmt = $this->db->prepare($sql);
-        if (!empty($params)) {
-            $stmt->bindParam(':name', $params['name'], PDO::PARAM_STR);
-            $stmt->bindParam(':description', $params['description'], PDO::PARAM_STR);
-            $stmt->bindParam(':price', $params['price'], PDO::PARAM_INT);
+        $stmt->execute($params);
+        $stmt->setFetchMode(PDO::FETCH_OBJ);
+        return $stmt;
+//        if (!empty($params)) {
+//            $stmt->bindParam(':name', $params['name'], PDO::PARAM_STR);
+//            $stmt->bindParam(':description', $params['description'], PDO::PARAM_STR);
+//            $stmt->bindParam(':price', $params['price'], PDO::PARAM_INT);
+//    }
+
 //            foreach ($params as $key=>$value) {
 ////                echo '<p>'.$key.'=>'.$value.'</p>';
 //                $stmt->bindParam(':' . $key, $_POST['']);
 //            }
-        }
+
 //        exit;
-        $stmt->execute();
+//        $stmt->execute();
 //        $query = $this->db->query($sql);
-        return $stmt;
+//        return $stmt;
     }
 
     public function row($sql, $params = [])
@@ -43,6 +48,11 @@ class Db
     {
         $result = $this->query($sql, $params);
         return $result->fetchColumn();
+    }
+
+    public function lastInsertedId()
+    {
+        return $this->db->lastInsertId();
     }
 
 }

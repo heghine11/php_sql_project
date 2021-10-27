@@ -29,33 +29,33 @@ class Main extends Controller
         $this->view->render('account page');
     }
 
-    public function addProductsAction()
-    {
-        $db = new Db();
-        $taskModel = new ProductModel();
-//        $params = [
-//            ':name' => $_POST['name'],
-//            ':description' => $_POST['description'],
-//            ':price' => $_POST['price'],
-//        ];
-        if ($_POST) {
-            $taskModel->name = $_POST['name'] ?? '';
-            $taskModel->description = $_POST['description'] ?? '';
-            $taskModel->price = $_POST['price'];
-                $taskModel->insertProduct();
-//                $this->redirect('/');
-            }
-
-
-//        $data = $db->query($sql);
-//        var_dump($data);
-//        $result = $this->model->insertProduct();
-//        var_dump($result);
-        $this->view->render('main page');
-        //        $sql = 'INSERT INTO products(name, description, price)
-//                    VALUES (:name, :price, :description)';
-
-    }
+//    public function addProductsAction()
+//    {
+////        $db = new Db();
+//        $taskModel = new ProductModel();
+////        $params = [
+////            ':name' => $_POST['name'],
+////            ':description' => $_POST['description'],
+////            ':price' => $_POST['price'],
+////        ];
+//        if (isset($_POST['submit'])) {
+//            $taskModel->name = $_POST['name'] ?? '';
+//            $taskModel->description = $_POST['description'] ?? '';
+//            $taskModel->price = $_POST['price'];
+//            $taskModel->insertProduct();
+////                $this->redirect('/');
+//            }
+//
+//
+////        $data = $db->query($sql);
+////        var_dump($data);
+////        $result = $this->model->insertProduct();
+////        var_dump($result);
+//        $this->view->render('main page');
+//        //        $sql = 'INSERT INTO products(name, description, price)
+////                    VALUES (:name, :price, :description)';
+//
+//    }
 
     public function allOrdersAction()
     {

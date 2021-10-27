@@ -7,7 +7,7 @@
 <p>Add products to your product list.</p>
 
 <div class="container">
-    <form action="../../controllers/Main.php" method="post">
+    <form action="" method="post">
         <div class="row">
             <div class="col-25">
                 <label for="pname">Product Name</label>
@@ -36,7 +36,7 @@
         </div>
 
         <div class="row">
-            <input type="submit" value="Submit">
+            <input type="submit" name="submit" value="Submit" >
         </div>
 
     </form>
